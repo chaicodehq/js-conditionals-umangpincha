@@ -24,4 +24,27 @@
  */
 export function getTicketPrice(age, isWeekend) {
   // Your code here
+  if(age < 0 || typeof age !== 'number') {
+    return -1;
+  }else if(isWeekend){
+    if(age <= 12){
+      return 11;
+    }else if(age >= 13 && age <= 17){
+      return 15;
+    }else if(age >= 18 && age <= 59){
+      return 18;
+    }else if(age >= 60){
+      return 13;
+    }
+  }else{
+    if(age <= 12){
+      return 8;
+    }else if (age >= 13 && age <= 17){
+      return 12;
+  }else if (age >= 18 && age <= 59){
+      return 15;
+    }else if( age >= 60){
+      return 10;
+    }
+  }
 }
